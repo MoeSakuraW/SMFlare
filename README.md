@@ -45,7 +45,7 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/SMFlare.git
+git clone https://github.com/MoeSakuraW/SMFlare.git
 cd SMFlare
 
 # 安装依赖
