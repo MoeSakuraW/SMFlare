@@ -1,0 +1,247 @@
+/**
+ * 通用组件样式
+ * 基于CSS变量的可复用组件样式
+ */
+
+/* ========== 布局组件 ========== */
+
+/* 页面容器 */
+.page-container {
+    max-width: var(--container-md);
+    margin: 0 auto;
+}
+
+/* 页面标题区域 */
+.section-header {
+    margin-bottom: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-header h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-medium);
+    margin: 0;
+}
+
+/* 标题操作按钮区域 */
+.header-actions {
+    display: flex;
+    gap: var(--gap-sm);
+    align-items: center;
+}
+
+/* ========== 卡片组件 ========== */
+
+/* 基础卡片 */
+.card {
+    background: var(--color-bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-base);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+/* 卡片标题 */
+.card-title {
+    font-size: var(--font-size-h4);
+    color: var(--color-text-primary);
+    margin-bottom: var(--gap-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+/* 卡片描述 */
+.card-desc {
+    font-size: var(--font-size-base);
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--spacing-xl);
+    line-height: var(--line-height-relaxed);
+}
+
+/* ========== 空状态组件 ========== */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-3xl) var(--spacing-xl);
+    color: var(--color-text-tertiary);
+    text-align: center;
+}
+
+.empty-state p {
+    margin: var(--gap-sm) 0;
+    font-size: var(--font-size-base);
+}
+
+/* ========== 加载状态组件 ========== */
+
+.loading-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    gap: var(--gap-sm);
+    color: var(--color-text-tertiary);
+}
+
+.no-more {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--color-text-tertiary);
+    font-size: var(--font-size-base);
+}
+
+/* ========== 按钮样式系统 ========== */
+
+/**
+ * 按钮分类说明：
+ * - btn-primary-action: 主要操作（数据操作、核心业务）
+ * - btn-guide: 引导操作（配置引导、导航）
+ * - btn-content: 内容操作（复制、查看等高频辅助）
+ * - btn-state: 状态操作（收藏、切换等状态切换）
+ * - btn-secondary: 次要操作（外部跳转等低优先级）
+ */
+
+/* 主要操作按钮 - 绿色系 */
+.el-button.btn-primary-action {
+    background-color: var(--btn-primary-action);
+    border-color: var(--btn-primary-action);
+    color: var(--color-text-white);
+}
+
+.el-button.btn-primary-action:hover {
+    background-color: var(--btn-primary-action-hover);
+    border-color: var(--btn-primary-action-hover);
+}
+
+.el-button.btn-primary-action:active {
+    background-color: var(--btn-primary-action-active);
+    border-color: var(--btn-primary-action-active);
+}
+
+.el-button.btn-primary-action.is-disabled {
+    background-color: var(--btn-primary-action-disabled);
+    border-color: var(--btn-primary-action-disabled);
+}
+
+/* 引导操作按钮 - 蓝色系（文本按钮） */
+.el-button.btn-guide {
+    color: var(--btn-guide);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.el-button.btn-guide:hover {
+    color: var(--btn-guide);
+    background-color: var(--color-primary-lightest);
+}
+
+.el-button.btn-guide:active {
+    color: var(--btn-guide-active);
+}
+
+.el-button.btn-guide.is-disabled {
+    color: var(--btn-guide-disabled);
+}
+
+/* 内容操作按钮 - 灰蓝色系（文本按钮） */
+.el-button.btn-content {
+    color: var(--btn-content);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.el-button.btn-content:hover {
+    color: var(--btn-content);
+    background-color: var(--color-bg-secondary);
+}
+
+.el-button.btn-content:active {
+    color: var(--btn-content-active);
+}
+
+.el-button.btn-content.is-disabled {
+    color: var(--btn-content-disabled);
+}
+
+/* 状态操作按钮 - 橙色系（圆形按钮，支持激活/未激活状态） */
+.el-button.btn-state {
+    background-color: var(--btn-state-inactive);
+    border-color: var(--btn-state-inactive);
+    color: var(--color-text-secondary);
+}
+
+.el-button.btn-state:hover {
+    background-color: var(--btn-state-inactive-hover);
+    border-color: var(--btn-state-inactive-hover);
+}
+
+.el-button.btn-state.is-active {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--btn-state-active);
+}
+
+.el-button.btn-state.is-active:hover {
+    background-color: var(--btn-state-inactive-hover);
+    border-color: transparent;
+    color: var(--btn-state-active-hover);
+}
+
+.el-button.btn-state.is-disabled {
+    background-color: var(--btn-state-inactive);
+    border-color: var(--btn-state-inactive);
+    color: var(--btn-content-disabled);
+    cursor: not-allowed;
+}
+
+/* 次要操作按钮 - 灰色系（默认按钮） */
+.el-button.btn-secondary {
+    background-color: transparent;
+    border-color: var(--color-border-base);
+    color: var(--btn-secondary);
+}
+
+.el-button.btn-secondary:hover {
+    color: var(--btn-secondary-hover);
+    border-color: var(--btn-secondary-hover);
+    background-color: var(--color-bg-secondary);
+}
+
+.el-button.btn-secondary:active {
+    color: var(--btn-secondary-active);
+}
+
+.el-button.btn-secondary.is-disabled {
+    color: var(--btn-secondary-disabled);
+    border-color: var(--color-border-base);
+}
+
+/* 危险操作按钮 - 红色系（删除等危险操作） */
+.el-button.btn-danger {
+    background-color: transparent;
+    border-color: transparent;
+    color: var(--btn-danger);
+}
+
+.el-button.btn-danger:hover {
+    color: var(--btn-danger);
+    background-color: rgba(245, 108, 108, 0.1);
+}
+
+.el-button.btn-danger:active {
+    color: var(--btn-danger-active);
+}
+
+.el-button.btn-danger.is-disabled {
+    color: var(--btn-danger-disabled);
+    cursor: not-allowed;
+}
